@@ -16,8 +16,12 @@ export default function Community() {
             </Link>
           </Button>
           <div>
-            <h1 className="text-lg font-semibold text-civic-blue-900">Community</h1>
-            <p className="text-sm text-civic-blue-600">Collaborate on civic issues</p>
+            <h1 className="text-lg font-semibold text-civic-blue-900">
+              Community
+            </h1>
+            <p className="text-sm text-civic-blue-600">
+              Collaborate on civic issues
+            </p>
           </div>
           <Button asChild>
             <Link to="/report">Report Issue</Link>

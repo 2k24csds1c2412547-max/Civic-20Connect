@@ -16,8 +16,12 @@ export default function CivicRewards() {
             </Link>
           </Button>
           <div>
-            <h1 className="text-lg font-semibold text-civic-blue-900">Civic Rewards</h1>
-            <p className="text-sm text-civic-blue-600">Your community contribution dashboard</p>
+            <h1 className="text-lg font-semibold text-civic-blue-900">
+              Civic Rewards
+            </h1>
+            <p className="text-sm text-civic-blue-600">
+              Your community contribution dashboard
+            </p>
           </div>
           <Button asChild>
             <Link to="/report">Report Issue</Link>

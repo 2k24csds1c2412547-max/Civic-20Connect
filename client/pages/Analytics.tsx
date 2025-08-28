@@ -16,8 +16,12 @@ export default function Analytics() {
             </Link>
           </Button>
           <div>
-            <h1 className="text-lg font-semibold text-civic-blue-900">City Analytics</h1>
-            <p className="text-sm text-civic-blue-600">Issue visualization and insights</p>
+            <h1 className="text-lg font-semibold text-civic-blue-900">
+              City Analytics
+            </h1>
+            <p className="text-sm text-civic-blue-600">
+              Issue visualization and insights
+            </p>
           </div>
           <Button asChild>
             <Link to="/report">Report Issue</Link>

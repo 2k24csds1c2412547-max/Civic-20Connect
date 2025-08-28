@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { 
-  Brain, 
-  TrendingUp, 
+import {
+  Brain,
+  TrendingUp,
   TrendingDown,
-  AlertTriangle, 
+  AlertTriangle,
   Target,
   Calendar,
   MapPin,
@@ -19,17 +25,17 @@ import {
   Activity,
   Lightbulb,
   Clock,
-  DollarSign
+  DollarSign,
 } from "lucide-react";
 
 interface Prediction {
   id: string;
-  type: 'hotspot' | 'maintenance' | 'resource' | 'seasonal';
+  type: "hotspot" | "maintenance" | "resource" | "seasonal";
   title: string;
   description: string;
   confidence: number;
   timeframe: string;
-  impact: 'low' | 'medium' | 'high';
+  impact: "low" | "medium" | "high";
   category: string;
   location?: string;
   recommendations: string[];
@@ -37,7 +43,7 @@ interface Prediction {
 
 interface Insight {
   id: string;
-  type: 'trend' | 'pattern' | 'anomaly' | 'efficiency';
+  type: "trend" | "pattern" | "anomaly" | "efficiency";
   title: string;
   description: string;
   metric: string;
@@ -48,7 +54,7 @@ interface Insight {
 }
 
 export default function PredictiveInsights() {
-  const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
+  const [selectedTimeframe, setSelectedTimeframe] = useState("30d");
 
   // Mock predictive data
   const predictions: Prediction[] = [
@@ -56,7 +62,8 @@ export default function PredictiveInsights() {
       id: "p1",
       type: "hotspot",
       title: "Emerging Issue Hotspot Detected",
-      description: "AI models predict Oak Avenue will become a high-priority area for road maintenance issues based on traffic patterns and weather data.",
+      description:
+        "AI models predict Oak Avenue will become a high-priority area for road maintenance issues based on traffic patterns and weather data.",
       confidence: 87,
       timeframe: "Next 2-3 weeks",
       impact: "high",
@@ -65,14 +72,15 @@ export default function PredictiveInsights() {
       recommendations: [
         "Schedule preventive maintenance inspection",
         "Increase patrol frequency in the area",
-        "Prepare emergency repair resources"
-      ]
+        "Prepare emergency repair resources",
+      ],
     },
     {
       id: "p2",
       type: "maintenance",
       title: "Street Light Failure Prediction",
-      description: "Based on usage patterns and maintenance history, 12 street lights in the downtown area are likely to fail within the next month.",
+      description:
+        "Based on usage patterns and maintenance history, 12 street lights in the downtown area are likely to fail within the next month.",
       confidence: 92,
       timeframe: "Next 30 days",
       impact: "medium",
@@ -81,14 +89,15 @@ export default function PredictiveInsights() {
       recommendations: [
         "Schedule proactive replacement",
         "Order replacement bulbs and fixtures",
-        "Plan maintenance routes efficiently"
-      ]
+        "Plan maintenance routes efficiently",
+      ],
     },
     {
       id: "p3",
       type: "seasonal",
       title: "Winter Weather Impact Forecast",
-      description: "Historical data suggests a 340% increase in road maintenance requests during upcoming winter months.",
+      description:
+        "Historical data suggests a 340% increase in road maintenance requests during upcoming winter months.",
       confidence: 95,
       timeframe: "Next 3 months",
       impact: "high",
@@ -96,14 +105,15 @@ export default function PredictiveInsights() {
       recommendations: [
         "Increase road maintenance budget allocation",
         "Pre-position salt and snow equipment",
-        "Expand winter maintenance crew"
-      ]
+        "Expand winter maintenance crew",
+      ],
     },
     {
       id: "p4",
       type: "resource",
       title: "Resource Optimization Opportunity",
-      description: "AI analysis shows Park & Recreation department could improve response times by 23% with route optimization.",
+      description:
+        "AI analysis shows Park & Recreation department could improve response times by 23% with route optimization.",
       confidence: 78,
       timeframe: "Immediate",
       impact: "medium",
@@ -111,9 +121,9 @@ export default function PredictiveInsights() {
       recommendations: [
         "Implement suggested route changes",
         "Redistrict maintenance zones",
-        "Cross-train maintenance staff"
-      ]
-    }
+        "Cross-train maintenance staff",
+      ],
+    },
   ];
 
   const insights: Insight[] = [
@@ -126,7 +136,7 @@ export default function PredictiveInsights() {
       value: 4.2,
       change: -18,
       icon: <Clock className="w-5 h-5 text-green-500" />,
-      actionable: false
+      actionable: false,
     },
     {
       id: "i2",
@@ -137,7 +147,7 @@ export default function PredictiveInsights() {
       value: 67,
       change: 12,
       icon: <Activity className="w-5 h-5 text-blue-500" />,
-      actionable: true
+      actionable: true,
     },
     {
       id: "i3",
@@ -148,37 +158,47 @@ export default function PredictiveInsights() {
       value: 145,
       change: 45,
       icon: <TrendingUp className="w-5 h-5 text-orange-500" />,
-      actionable: true
+      actionable: true,
     },
     {
       id: "i4",
       type: "efficiency",
       title: "Cost Savings Achieved",
-      description: "Predictive maintenance saved estimated $24,000 this quarter",
+      description:
+        "Predictive maintenance saved estimated $24,000 this quarter",
       metric: "Cost Savings",
       value: 24000,
       change: 32,
       icon: <DollarSign className="w-5 h-5 text-green-500" />,
-      actionable: false
-    }
+      actionable: false,
+    },
   ];
 
   const getImpactColor = (impact: string) => {
     switch (impact) {
-      case 'high': return 'bg-red-500';
-      case 'medium': return 'bg-orange-500';
-      case 'low': return 'bg-green-500';
-      default: return 'bg-gray-500';
+      case "high":
+        return "bg-red-500";
+      case "medium":
+        return "bg-orange-500";
+      case "low":
+        return "bg-green-500";
+      default:
+        return "bg-gray-500";
     }
   };
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'hotspot': return <MapPin className="w-5 h-5 text-red-500" />;
-      case 'maintenance': return <Target className="w-5 h-5 text-blue-500" />;
-      case 'seasonal': return <Calendar className="w-5 h-5 text-orange-500" />;
-      case 'resource': return <Zap className="w-5 h-5 text-purple-500" />;
-      default: return <Brain className="w-5 h-5 text-gray-500" />;
+      case "hotspot":
+        return <MapPin className="w-5 h-5 text-red-500" />;
+      case "maintenance":
+        return <Target className="w-5 h-5 text-blue-500" />;
+      case "seasonal":
+        return <Calendar className="w-5 h-5 text-orange-500" />;
+      case "resource":
+        return <Zap className="w-5 h-5 text-purple-500" />;
+      default:
+        return <Brain className="w-5 h-5 text-gray-500" />;
     }
   };
 
@@ -192,7 +212,8 @@ export default function PredictiveInsights() {
             Predictive Analytics & AI Insights
           </CardTitle>
           <CardDescription className="text-purple-100">
-            Advanced AI-powered predictions and actionable insights to improve civic services
+            Advanced AI-powered predictions and actionable insights to improve
+            civic services
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -231,18 +252,27 @@ export default function PredictiveInsights() {
         <CardContent>
           <div className="space-y-4">
             {predictions.map((prediction) => (
-              <Card key={prediction.id} className="border-l-4 border-l-purple-500">
+              <Card
+                key={prediction.id}
+                className="border-l-4 border-l-purple-500"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       {getTypeIcon(prediction.type)}
                       <div>
-                        <h3 className="font-semibold text-civic-blue-900">{prediction.title}</h3>
-                        <p className="text-sm text-gray-600">{prediction.description}</p>
+                        <h3 className="font-semibold text-civic-blue-900">
+                          {prediction.title}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          {prediction.description}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Badge className={`${getImpactColor(prediction.impact)} text-white`}>
+                      <Badge
+                        className={`${getImpactColor(prediction.impact)} text-white`}
+                      >
                         {prediction.impact} impact
                       </Badge>
                       <Badge variant="outline">
@@ -282,7 +312,9 @@ export default function PredictiveInsights() {
                   <Alert className="border-blue-200 bg-blue-50">
                     <Lightbulb className="w-4 h-4" />
                     <AlertDescription>
-                      <div className="font-medium mb-2">Recommended Actions:</div>
+                      <div className="font-medium mb-2">
+                        Recommended Actions:
+                      </div>
                       <ul className="space-y-1 text-sm">
                         {prediction.recommendations.map((rec, index) => (
                           <li key={index} className="flex items-start gap-2">
@@ -314,37 +346,60 @@ export default function PredictiveInsights() {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {insights.map((insight) => (
-              <Card key={insight.id} className="hover:shadow-md transition-shadow">
+              <Card
+                key={insight.id}
+                className="hover:shadow-md transition-shadow"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       {insight.icon}
                       <div>
-                        <h3 className="font-semibold text-civic-blue-900">{insight.title}</h3>
-                        <p className="text-sm text-gray-600">{insight.description}</p>
+                        <h3 className="font-semibold text-civic-blue-900">
+                          {insight.title}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          {insight.description}
+                        </p>
                       </div>
                     </div>
                     {insight.actionable && (
-                      <Badge className="bg-orange-500 text-white">Action Needed</Badge>
+                      <Badge className="bg-orange-500 text-white">
+                        Action Needed
+                      </Badge>
                     )}
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-2xl font-bold text-civic-blue-600">
-                        {insight.metric === 'Cost Savings' ? `$${insight.value.toLocaleString()}` 
-                         : insight.metric === 'Avg Resolution Time' ? `${insight.value} days`
-                         : insight.value}
+                        {insight.metric === "Cost Savings"
+                          ? `$${insight.value.toLocaleString()}`
+                          : insight.metric === "Avg Resolution Time"
+                            ? `${insight.value} days`
+                            : insight.value}
                       </div>
-                      <div className="text-sm text-gray-600">{insight.metric}</div>
+                      <div className="text-sm text-gray-600">
+                        {insight.metric}
+                      </div>
                     </div>
-                    <div className={`flex items-center gap-1 ${
-                      insight.change > 0 
-                        ? (insight.type === 'anomaly' ? 'text-orange-600' : 'text-green-600')
-                        : 'text-green-600'
-                    }`}>
-                      {insight.change > 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-                      <span className="font-semibold">{Math.abs(insight.change)}%</span>
+                    <div
+                      className={`flex items-center gap-1 ${
+                        insight.change > 0
+                          ? insight.type === "anomaly"
+                            ? "text-orange-600"
+                            : "text-green-600"
+                          : "text-green-600"
+                      }`}
+                    >
+                      {insight.change > 0 ? (
+                        <TrendingUp className="w-4 h-4" />
+                      ) : (
+                        <TrendingDown className="w-4 h-4" />
+                      )}
+                      <span className="font-semibold">
+                        {Math.abs(insight.change)}%
+                      </span>
                     </div>
                   </div>
 
@@ -365,22 +420,30 @@ export default function PredictiveInsights() {
         <Card className="text-center hover:shadow-md transition-shadow cursor-pointer">
           <CardContent className="p-6">
             <LineChart className="w-12 h-12 text-civic-blue-500 mx-auto mb-4" />
-            <h3 className="font-semibold text-civic-blue-900 mb-2">Trend Analysis</h3>
+            <h3 className="font-semibold text-civic-blue-900 mb-2">
+              Trend Analysis
+            </h3>
             <p className="text-sm text-gray-600 mb-4">
               Analyze long-term trends and patterns in civic issues
             </p>
-            <Button variant="outline" size="sm">Explore Trends</Button>
+            <Button variant="outline" size="sm">
+              Explore Trends
+            </Button>
           </CardContent>
         </Card>
 
         <Card className="text-center hover:shadow-md transition-shadow cursor-pointer">
           <CardContent className="p-6">
             <PieChart className="w-12 h-12 text-civic-green-500 mx-auto mb-4" />
-            <h3 className="font-semibold text-civic-green-900 mb-2">Resource Allocation</h3>
+            <h3 className="font-semibold text-civic-green-900 mb-2">
+              Resource Allocation
+            </h3>
             <p className="text-sm text-gray-600 mb-4">
               Optimize department resources based on demand patterns
             </p>
-            <Button variant="outline" size="sm">View Allocation</Button>
+            <Button variant="outline" size="sm">
+              View Allocation
+            </Button>
           </CardContent>
         </Card>
 
@@ -391,7 +454,9 @@ export default function PredictiveInsights() {
             <p className="text-sm text-gray-600 mb-4">
               Configure and monitor machine learning prediction models
             </p>
-            <Button variant="outline" size="sm">Manage Models</Button>
+            <Button variant="outline" size="sm">
+              Manage Models
+            </Button>
           </CardContent>
         </Card>
       </div>

@@ -3,16 +3,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { 
-  Brain, 
-  AlertTriangle, 
-  CheckCircle, 
-  Clock, 
-  Zap, 
+import {
+  Brain,
+  AlertTriangle,
+  CheckCircle,
+  Clock,
+  Zap,
   Target,
   TrendingUp,
   MapPin,
-  Users
+  Users,
 } from "lucide-react";
 
 interface AIAnalysisProps {
@@ -24,13 +24,13 @@ interface AIAnalysisProps {
   onDuplicatesFound?: (duplicates: any[]) => void;
 }
 
-export default function AIAnalysis({ 
-  title, 
-  description, 
-  location, 
+export default function AIAnalysis({
+  title,
+  description,
+  location,
   photos = [],
   onSuggestedCategory,
-  onDuplicatesFound 
+  onDuplicatesFound,
 }: AIAnalysisProps) {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysis, setAnalysis] = useState<any>(null);
@@ -40,16 +40,20 @@ export default function AIAnalysis({
   useEffect(() => {
     if (title && description) {
       setIsAnalyzing(true);
-      
+
       // Simulate AI processing delay
       setTimeout(() => {
         const mockAnalysis = performAIAnalysis(title, description, location);
-        const mockDuplicates = findPotentialDuplicates(title, description, location);
-        
+        const mockDuplicates = findPotentialDuplicates(
+          title,
+          description,
+          location,
+        );
+
         setAnalysis(mockAnalysis);
         setDuplicates(mockDuplicates);
         setIsAnalyzing(false);
-        
+
         if (onSuggestedCategory) {
           onSuggestedCategory(mockAnalysis.suggestedCategory);
         }
@@ -60,34 +64,66 @@ export default function AIAnalysis({
     }
   }, [title, description, location]);
 
-  const performAIAnalysis = (title: string, description: string, location: string) => {
+  const performAIAnalysis = (
+    title: string,
+    description: string,
+    location: string,
+  ) => {
     // Mock AI categorization logic
     const keywords = (title + " " + description).toLowerCase();
     let suggestedCategory = "other";
     let confidence = 0;
 
-    if (keywords.includes("light") || keywords.includes("lamp") || keywords.includes("dark")) {
+    if (
+      keywords.includes("light") ||
+      keywords.includes("lamp") ||
+      keywords.includes("dark")
+    ) {
       suggestedCategory = "lighting";
       confidence = 0.92;
-    } else if (keywords.includes("road") || keywords.includes("pothole") || keywords.includes("traffic")) {
+    } else if (
+      keywords.includes("road") ||
+      keywords.includes("pothole") ||
+      keywords.includes("traffic")
+    ) {
       suggestedCategory = "roads";
       confidence = 0.88;
-    } else if (keywords.includes("water") || keywords.includes("leak") || keywords.includes("pipe")) {
+    } else if (
+      keywords.includes("water") ||
+      keywords.includes("leak") ||
+      keywords.includes("pipe")
+    ) {
       suggestedCategory = "water";
       confidence = 0.95;
-    } else if (keywords.includes("park") || keywords.includes("tree") || keywords.includes("playground")) {
+    } else if (
+      keywords.includes("park") ||
+      keywords.includes("tree") ||
+      keywords.includes("playground")
+    ) {
       suggestedCategory = "parks";
       confidence = 0.84;
-    } else if (keywords.includes("trash") || keywords.includes("garbage") || keywords.includes("waste")) {
+    } else if (
+      keywords.includes("trash") ||
+      keywords.includes("garbage") ||
+      keywords.includes("waste")
+    ) {
       suggestedCategory = "waste";
       confidence = 0.91;
     }
 
     // Mock priority assessment
     let suggestedPriority = "medium";
-    if (keywords.includes("emergency") || keywords.includes("dangerous") || keywords.includes("urgent")) {
+    if (
+      keywords.includes("emergency") ||
+      keywords.includes("dangerous") ||
+      keywords.includes("urgent")
+    ) {
       suggestedPriority = "urgent";
-    } else if (keywords.includes("leak") || keywords.includes("broken") || keywords.includes("safety")) {
+    } else if (
+      keywords.includes("leak") ||
+      keywords.includes("broken") ||
+      keywords.includes("safety")
+    ) {
       suggestedPriority = "high";
     } else if (keywords.includes("minor") || keywords.includes("cosmetic")) {
       suggestedPriority = "low";
@@ -99,11 +135,15 @@ export default function AIAnalysis({
       suggestedPriority,
       estimatedResolutionTime: getEstimatedTime(suggestedCategory),
       riskLevel: assessRiskLevel(keywords),
-      insights: generateInsights(keywords, location)
+      insights: generateInsights(keywords, location),
     };
   };
 
-  const findPotentialDuplicates = (title: string, description: string, location: string) => {
+  const findPotentialDuplicates = (
+    title: string,
+    description: string,
+    location: string,
+  ) => {
     // Mock duplicate detection
     const mockReports = [
       {
@@ -111,21 +151,24 @@ export default function AIAnalysis({
         title: "Street light not working on Main St",
         location: "Main St & 2nd Ave",
         similarity: 0.87,
-        status: "in_progress"
+        status: "in_progress",
       },
       {
         id: "CR-2024-0132",
         title: "Broken lamp post near intersection",
         location: "Main St & 1st Ave",
         similarity: 0.73,
-        status: "pending"
-      }
+        status: "pending",
+      },
     ];
 
-    if (title.toLowerCase().includes("light") && location.toLowerCase().includes("main")) {
+    if (
+      title.toLowerCase().includes("light") &&
+      location.toLowerCase().includes("main")
+    ) {
       return mockReports;
     }
-    
+
     return [];
   };
 
@@ -136,15 +179,23 @@ export default function AIAnalysis({
       water: "24-48 hours",
       parks: "3-5 days",
       waste: "1-2 days",
-      other: "3-7 days"
+      other: "3-7 days",
     };
     return timeEstimates[category] || "3-7 days";
   };
 
   const assessRiskLevel = (keywords: string) => {
-    if (keywords.includes("dangerous") || keywords.includes("emergency") || keywords.includes("safety")) {
+    if (
+      keywords.includes("dangerous") ||
+      keywords.includes("emergency") ||
+      keywords.includes("safety")
+    ) {
       return "high";
-    } else if (keywords.includes("urgent") || keywords.includes("broken") || keywords.includes("leak")) {
+    } else if (
+      keywords.includes("urgent") ||
+      keywords.includes("broken") ||
+      keywords.includes("leak")
+    ) {
       return "medium";
     }
     return "low";
@@ -152,19 +203,28 @@ export default function AIAnalysis({
 
   const generateInsights = (keywords: string, location: string) => {
     const insights = [];
-    
+
     if (keywords.includes("water") && keywords.includes("leak")) {
-      insights.push("Water leaks can cause significant infrastructure damage if not addressed quickly.");
+      insights.push(
+        "Water leaks can cause significant infrastructure damage if not addressed quickly.",
+      );
     }
-    
+
     if (keywords.includes("light") && keywords.includes("safety")) {
-      insights.push("Poor lighting can impact public safety, especially during evening hours.");
+      insights.push(
+        "Poor lighting can impact public safety, especially during evening hours.",
+      );
     }
-    
-    if (location.toLowerCase().includes("school") || location.toLowerCase().includes("park")) {
-      insights.push("Issues near schools and parks receive priority due to public safety concerns.");
+
+    if (
+      location.toLowerCase().includes("school") ||
+      location.toLowerCase().includes("park")
+    ) {
+      insights.push(
+        "Issues near schools and parks receive priority due to public safety concerns.",
+      );
     }
-    
+
     return insights;
   };
 
@@ -178,7 +238,9 @@ export default function AIAnalysis({
         <CardTitle className="flex items-center gap-2 text-purple-900">
           <Brain className="w-5 h-5" />
           AI Analysis
-          {isAnalyzing && <div className="animate-spin w-4 h-4 border-2 border-purple-500 border-t-transparent rounded-full"></div>}
+          {isAnalyzing && (
+            <div className="animate-spin w-4 h-4 border-2 border-purple-500 border-t-transparent rounded-full"></div>
+          )}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -189,7 +251,9 @@ export default function AIAnalysis({
               <div className="h-4 bg-purple-200 rounded w-1/2 mx-auto"></div>
               <div className="h-4 bg-purple-200 rounded w-2/3 mx-auto"></div>
             </div>
-            <p className="text-purple-600 mt-4">AI is analyzing your report...</p>
+            <p className="text-purple-600 mt-4">
+              AI is analyzing your report...
+            </p>
           </div>
         ) : analysis ? (
           <div className="space-y-4">
@@ -202,7 +266,10 @@ export default function AIAnalysis({
                   {analysis.suggestedCategory}
                 </Badge>
               </div>
-              <Badge variant="outline" className="text-green-600 border-green-600">
+              <Badge
+                variant="outline"
+                className="text-green-600 border-green-600"
+              >
                 {Math.round(analysis.categoryConfidence * 100)}% confident
               </Badge>
             </div>
@@ -210,17 +277,29 @@ export default function AIAnalysis({
             {/* Priority Assessment */}
             <div className="flex items-center justify-between p-3 bg-white rounded-lg border">
               <div className="flex items-center gap-2">
-                <AlertTriangle className={`w-4 h-4 ${
-                  analysis.suggestedPriority === 'urgent' ? 'text-red-500' :
-                  analysis.suggestedPriority === 'high' ? 'text-orange-500' :
-                  analysis.suggestedPriority === 'medium' ? 'text-yellow-500' : 'text-green-500'
-                }`} />
+                <AlertTriangle
+                  className={`w-4 h-4 ${
+                    analysis.suggestedPriority === "urgent"
+                      ? "text-red-500"
+                      : analysis.suggestedPriority === "high"
+                        ? "text-orange-500"
+                        : analysis.suggestedPriority === "medium"
+                          ? "text-yellow-500"
+                          : "text-green-500"
+                  }`}
+                />
                 <span className="font-medium">AI Priority Assessment:</span>
-                <Badge className={`${
-                  analysis.suggestedPriority === 'urgent' ? 'bg-red-500' :
-                  analysis.suggestedPriority === 'high' ? 'bg-orange-500' :
-                  analysis.suggestedPriority === 'medium' ? 'bg-yellow-500' : 'bg-green-500'
-                } text-white`}>
+                <Badge
+                  className={`${
+                    analysis.suggestedPriority === "urgent"
+                      ? "bg-red-500"
+                      : analysis.suggestedPriority === "high"
+                        ? "bg-orange-500"
+                        : analysis.suggestedPriority === "medium"
+                          ? "bg-yellow-500"
+                          : "bg-green-500"
+                  } text-white`}
+                >
                   {analysis.suggestedPriority}
                 </Badge>
               </div>
@@ -231,7 +310,9 @@ export default function AIAnalysis({
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-blue-500" />
                 <span className="font-medium">Estimated Resolution:</span>
-                <span className="text-blue-600 font-semibold">{analysis.estimatedResolutionTime}</span>
+                <span className="text-blue-600 font-semibold">
+                  {analysis.estimatedResolutionTime}
+                </span>
               </div>
             </div>
 
@@ -240,10 +321,15 @@ export default function AIAnalysis({
               <div className="flex items-center gap-2">
                 <Zap className="w-4 h-4 text-orange-500" />
                 <span className="font-medium">Risk Level:</span>
-                <Badge className={`${
-                  analysis.riskLevel === 'high' ? 'bg-red-500' :
-                  analysis.riskLevel === 'medium' ? 'bg-orange-500' : 'bg-green-500'
-                } text-white`}>
+                <Badge
+                  className={`${
+                    analysis.riskLevel === "high"
+                      ? "bg-red-500"
+                      : analysis.riskLevel === "medium"
+                        ? "bg-orange-500"
+                        : "bg-green-500"
+                  } text-white`}
+                >
                   {analysis.riskLevel}
                 </Badge>
               </div>
@@ -272,12 +358,19 @@ export default function AIAnalysis({
               <Alert className="border-amber-200 bg-amber-50">
                 <Users className="w-4 h-4" />
                 <AlertDescription>
-                  <div className="font-medium mb-2">⚠️ Potential Duplicates Found:</div>
+                  <div className="font-medium mb-2">
+                    ⚠️ Potential Duplicates Found:
+                  </div>
                   <div className="space-y-2">
                     {duplicates.map((duplicate) => (
-                      <div key={duplicate.id} className="flex items-center justify-between p-2 bg-white rounded border">
+                      <div
+                        key={duplicate.id}
+                        className="flex items-center justify-between p-2 bg-white rounded border"
+                      >
                         <div>
-                          <div className="font-medium text-sm">{duplicate.title}</div>
+                          <div className="font-medium text-sm">
+                            {duplicate.title}
+                          </div>
                           <div className="text-xs text-gray-600 flex items-center gap-1">
                             <MapPin className="w-3 h-3" />
                             {duplicate.location}
@@ -287,13 +380,16 @@ export default function AIAnalysis({
                           <Badge variant="outline">
                             {Math.round(duplicate.similarity * 100)}% similar
                           </Badge>
-                          <Button size="sm" variant="outline">View</Button>
+                          <Button size="sm" variant="outline">
+                            View
+                          </Button>
                         </div>
                       </div>
                     ))}
                   </div>
                   <p className="text-sm mt-2 text-amber-700">
-                    Consider checking these reports before submitting to avoid duplicates.
+                    Consider checking these reports before submitting to avoid
+                    duplicates.
                   </p>
                 </AlertDescription>
               </Alert>
