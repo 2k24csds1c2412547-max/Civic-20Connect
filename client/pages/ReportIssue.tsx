@@ -206,9 +206,24 @@ export default function ReportIssue() {
                 </div>
               </div>
 
-              <Button 
-                onClick={() => setStep(2)} 
-                className="w-full" 
+              {/* AI Analysis */}
+              {(formData.title || formData.description) && (
+                <AIAnalysis
+                  title={formData.title}
+                  description={formData.description}
+                  location={formData.location}
+                  photos={formData.photos}
+                  onSuggestedCategory={(category) => {
+                    if (!formData.category) {
+                      setFormData(prev => ({ ...prev, category }));
+                    }
+                  }}
+                />
+              )}
+
+              <Button
+                onClick={() => setStep(2)}
+                className="w-full"
                 disabled={!formData.category || !formData.title || !formData.description || !formData.urgency}
               >
                 Next: Add Location & Photos
