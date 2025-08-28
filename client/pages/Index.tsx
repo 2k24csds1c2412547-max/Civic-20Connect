@@ -19,9 +19,10 @@ export default function Index() {
               <p className="text-xs text-civic-blue-600">Community Issue Reporting</p>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">Features</a>
-            <a href="#how-it-works" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">How It Works</a>
+          <nav className="hidden lg:flex items-center gap-4">
+            <Link to="/community" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">Community</Link>
+            <Link to="/analytics" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">Analytics</Link>
+            <Link to="/rewards" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">Rewards</Link>
             <Button variant="outline" size="sm" asChild>
               <Link to="/admin">Admin Portal</Link>
             </Button>
@@ -254,6 +255,60 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Innovative Features Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-600 via-blue-600 to-civic-green-600">
+        <div className="container mx-auto max-w-6xl text-center">
+          <Badge className="mb-6 bg-white/20 text-white hover:bg-white/30">
+            🚀 Powered by AI & Innovation
+          </Badge>
+          <h2 className="text-4xl font-bold text-white mb-6">Next-Generation Civic Engagement</h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
+            Experience the future of civic reporting with AI-powered insights, gamification, and community collaboration
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/15 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">AI-Powered Reporting</h3>
+                <p className="text-blue-100 mb-4">Smart categorization, duplicate detection, and voice-to-text reporting with advanced AI</p>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-civic-blue-600" asChild>
+                  <Link to="/report">Try AI Features</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/15 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Community Collaboration</h3>
+                <p className="text-blue-100 mb-4">Vote on issues, earn rewards, and collaborate with neighbors on solutions</p>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-civic-blue-600" asChild>
+                  <Link to="/community">Join Community</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/15 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Predictive Analytics</h3>
+                <p className="text-blue-100 mb-4">Interactive heat maps and AI predictions to prevent issues before they occur</p>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-civic-blue-600" asChild>
+                  <Link to="/analytics">View Analytics</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-civic-blue-600 to-civic-green-600">
         <div className="container mx-auto max-w-4xl text-center">
@@ -268,8 +323,11 @@ export default function Index() {
                 Get Started Now
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
-              Learn More
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10" asChild>
+              <Link to="/rewards">
+                <Star className="w-5 h-5 mr-2" />
+                Earn Rewards
+              </Link>
             </Button>
           </div>
         </div>

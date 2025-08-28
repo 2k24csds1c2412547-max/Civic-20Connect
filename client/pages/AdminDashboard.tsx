@@ -21,6 +21,7 @@ import {
   UserCheck
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import PredictiveInsights from "@/components/PredictiveInsights";
 
 export default function AdminDashboard() {
   const [filterStatus, setFilterStatus] = useState("all");
@@ -161,11 +162,12 @@ export default function AdminDashboard() {
 
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 lg:w-auto lg:grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5 lg:w-auto lg:grid-cols-5">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="reports">Reports</TabsTrigger>
             <TabsTrigger value="departments">Departments</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            <TabsTrigger value="predictions">AI Insights</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
@@ -417,9 +419,16 @@ export default function AdminDashboard() {
                 <p className="text-gray-600 mb-4">
                   Detailed analytics and reporting features would be implemented here.
                 </p>
-                <Button variant="outline">Configure Analytics</Button>
+                <Button variant="outline" asChild>
+                  <Link to="/analytics">View Full Analytics</Link>
+                </Button>
               </CardContent>
             </Card>
+          </TabsContent>
+
+          {/* AI Insights Tab */}
+          <TabsContent value="predictions" className="space-y-6">
+            <PredictiveInsights />
           </TabsContent>
         </Tabs>
       </div>

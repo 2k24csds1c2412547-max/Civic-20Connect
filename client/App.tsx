@@ -10,6 +10,9 @@ import Index from "./pages/Index";
 import ReportIssue from "./pages/ReportIssue";
 import TrackReports from "./pages/TrackReports";
 import AdminDashboard from "./pages/AdminDashboard";
+import CivicRewards from "./pages/CivicRewards";
+import Community from "./pages/Community";
+import Analytics from "./pages/Analytics";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +28,9 @@ const App = () => (
           <Route path="/report" element={<ReportIssue />} />
           <Route path="/track" element={<TrackReports />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/rewards" element={<CivicRewards />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/analytics" element={<Analytics />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
