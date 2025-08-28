@@ -10,6 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, Camera, MapPin, Upload, CheckCircle, AlertTriangle, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import AIAnalysis from "@/components/AIAnalysis";
+import VoiceReporting from "@/components/VoiceReporting";
 
 export default function ReportIssue() {
   const [step, setStep] = useState(1);
@@ -180,6 +181,14 @@ export default function ReportIssue() {
                   onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
                 />
               </div>
+
+              {/* Voice Reporting */}
+              <VoiceReporting
+                existingDescription={formData.description}
+                onDescriptionUpdate={(description) => {
+                  setFormData(prev => ({ ...prev, description }));
+                }}
+              />
 
               <div>
                 <Label htmlFor="urgency" className="text-base font-semibold mb-3 block">Urgency Level</Label>
