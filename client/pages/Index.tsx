@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Camera, MapPin, Users, Bell, CheckCircle, Clock, AlertTriangle, Shield, Smartphone, Monitor } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   return (
@@ -21,8 +22,12 @@ export default function Index() {
           <nav className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">Features</a>
             <a href="#how-it-works" className="text-civic-blue-700 hover:text-civic-blue-900 font-medium">How It Works</a>
-            <Button variant="outline" size="sm">Admin Portal</Button>
-            <Button size="sm">Report Issue</Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/admin">Admin Portal</Link>
+            </Button>
+            <Button size="sm" asChild>
+              <Link to="/report">Report Issue</Link>
+            </Button>
           </nav>
           <Button className="md:hidden" variant="outline" size="sm">Menu</Button>
         </div>
@@ -44,14 +49,18 @@ export default function Index() {
             Report problems, track progress, and see real change happen in your neighborhood.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-6 bg-civic-blue-500 hover:bg-civic-blue-600">
-              <Camera className="w-5 h-5 mr-2" />
-              Report an Issue
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" className="text-lg px-8 py-6 bg-civic-blue-500 hover:bg-civic-blue-600" asChild>
+              <Link to="/report">
+                <Camera className="w-5 h-5 mr-2" />
+                Report an Issue
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-civic-blue-300 text-civic-blue-700 hover:bg-civic-blue-50">
-              <Monitor className="w-5 h-5 mr-2" />
-              Admin Dashboard
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-civic-blue-300 text-civic-blue-700 hover:bg-civic-blue-50" asChild>
+              <Link to="/admin">
+                <Monitor className="w-5 h-5 mr-2" />
+                Admin Dashboard
+              </Link>
             </Button>
           </div>
           
@@ -253,9 +262,11 @@ export default function Index() {
             Join thousands of citizens already making their communities better, one report at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6 bg-white text-civic-blue-600 hover:bg-gray-100">
-              <Smartphone className="w-5 h-5 mr-2" />
-              Get Started Now
+            <Button size="lg" className="text-lg px-8 py-6 bg-white text-civic-blue-600 hover:bg-gray-100" asChild>
+              <Link to="/report">
+                <Smartphone className="w-5 h-5 mr-2" />
+                Get Started Now
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
               Learn More
