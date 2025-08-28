@@ -21,8 +21,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 214 100% 47%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -38,25 +38,52 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 214 100% 47%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Civic Theme Colors */
+    --civic-blue-50: 214 100% 97%;
+    --civic-blue-100: 214 95% 93%;
+    --civic-blue-200: 213 96% 87%;
+    --civic-blue-300: 212 96% 78%;
+    --civic-blue-400: 213 94% 68%;
+    --civic-blue-500: 214 100% 47%;
+    --civic-blue-600: 221 83% 53%;
+    --civic-blue-700: 224 76% 48%;
+    --civic-blue-800: 226 71% 40%;
+    --civic-blue-900: 224 64% 33%;
+
+    --civic-green-50: 138 76% 97%;
+    --civic-green-100: 141 84% 93%;
+    --civic-green-200: 141 79% 85%;
+    --civic-green-300: 142 77% 73%;
+    --civic-green-400: 142 69% 58%;
+    --civic-green-500: 142 71% 45%;
+    --civic-green-600: 142 76% 36%;
+    --civic-green-700: 142 72% 29%;
+    --civic-green-800: 142 64% 24%;
+    --civic-green-900: 143 61% 20%;
+
+    --civic-orange-50: 24 95% 97%;
+    --civic-orange-100: 24 100% 94%;
+    --civic-orange-200: 24 100% 88%;
+    --civic-orange-300: 24 100% 80%;
+    --civic-orange-400: 24 100% 70%;
+    --civic-orange-500: 24 100% 60%;
+    --civic-orange-600: 20 91% 48%;
+    --civic-orange-700: 17 88% 40%;
+    --civic-orange-800: 15 79% 34%;
+    --civic-orange-900: 15 75% 28%;
   }
 
   .dark {
@@ -69,7 +96,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 214 100% 67%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -86,7 +113,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 214 100% 67%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -95,6 +122,40 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Civic Theme Colors - Dark Mode */
+    --civic-blue-50: 224 64% 12%;
+    --civic-blue-100: 226 71% 15%;
+    --civic-blue-200: 224 76% 20%;
+    --civic-blue-300: 221 83% 25%;
+    --civic-blue-400: 214 100% 35%;
+    --civic-blue-500: 214 100% 47%;
+    --civic-blue-600: 213 94% 60%;
+    --civic-blue-700: 212 96% 70%;
+    --civic-blue-800: 213 96% 80%;
+    --civic-blue-900: 214 95% 90%;
+
+    --civic-green-50: 143 61% 10%;
+    --civic-green-100: 142 64% 14%;
+    --civic-green-200: 142 72% 18%;
+    --civic-green-300: 142 76% 25%;
+    --civic-green-400: 142 71% 35%;
+    --civic-green-500: 142 71% 45%;
+    --civic-green-600: 142 69% 55%;
+    --civic-green-700: 142 77% 65%;
+    --civic-green-800: 141 79% 75%;
+    --civic-green-900: 141 84% 85%;
+
+    --civic-orange-50: 15 75% 15%;
+    --civic-orange-100: 15 79% 20%;
+    --civic-orange-200: 17 88% 25%;
+    --civic-orange-300: 20 91% 35%;
+    --civic-orange-400: 24 100% 50%;
+    --civic-orange-500: 24 100% 60%;
+    --civic-orange-600: 24 100% 70%;
+    --civic-orange-700: 24 100% 80%;
+    --civic-orange-800: 24 100% 85%;
+    --civic-orange-900: 24 100% 90%;
   }
 }
 
