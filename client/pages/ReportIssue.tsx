@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, Camera, MapPin, Upload, CheckCircle, AlertTriangle, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
+import AIAnalysis from "@/components/AIAnalysis";
 
 export default function ReportIssue() {
   const [step, setStep] = useState(1);
