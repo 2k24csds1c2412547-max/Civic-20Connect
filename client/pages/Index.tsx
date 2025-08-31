@@ -19,6 +19,8 @@ import {
   Shield,
   Smartphone,
   Monitor,
+  Star,
+  TrendingUp,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
