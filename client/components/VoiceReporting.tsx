@@ -17,7 +17,7 @@ import {
   Pause,
   RotateCcw,
   Volume2,
-  Waveform,
+  Loader2,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
@@ -288,7 +288,7 @@ export default function VoiceReporting({
           {isProcessing && (
             <div className="space-y-3">
               <div className="flex items-center justify-center gap-2 text-purple-600">
-                <Waveform className="w-5 h-5 animate-pulse" />
+                <Loader2 className="w-5 h-5 animate-pulse" />
                 <span>AI is transcribing your recording...</span>
               </div>
               <div className="w-full bg-purple-200 rounded-full h-2">
