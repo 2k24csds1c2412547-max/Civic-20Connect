@@ -165,16 +165,16 @@
 
 ### Essential Commands for Students
 
-| **Command** | **What it does** | **When to use** |
-|-------------|------------------|-----------------|
-| `node --version` | Check if Node.js is installed | After installing Node.js |
-| `git --version` | Check if Git is installed | After installing Git |
-| `cd [folder]` | Change to a folder | Navigate to project |
-| `git clone [url]` | Download project from GitHub | Get the code |
-| `npm install` | Install all project dependencies | Setup project |
-| `npm run dev` | Start development server | Every time you code |
-| `Ctrl+C` | Stop the development server | When done coding |
-| `Ctrl+` | Open/close terminal in VS Code | Quick terminal access |
+| **Command**       | **What it does**                 | **When to use**          |
+| ----------------- | -------------------------------- | ------------------------ |
+| `node --version`  | Check if Node.js is installed    | After installing Node.js |
+| `git --version`   | Check if Git is installed        | After installing Git     |
+| `cd [folder]`     | Change to a folder               | Navigate to project      |
+| `git clone [url]` | Download project from GitHub     | Get the code             |
+| `npm install`     | Install all project dependencies | Setup project            |
+| `npm run dev`     | Start development server         | Every time you code      |
+| `Ctrl+C`          | Stop the development server      | When done coding         |
+| `Ctrl+`           | Open/close terminal in VS Code   | Quick terminal access    |
 
 ---
 
@@ -189,6 +189,7 @@ Auto Rename Tag
 ```
 
 **How to install:**
+
 1. Open VS Code
 2. Press `Ctrl+Shift+X`
 3. Search for each extension name
@@ -200,13 +201,17 @@ Auto Rename Tag
 ## 🚨 Common Student Problems & Solutions
 
 ### ❌ Problem: "node is not recognized"
+
 **Solution:**
+
 1. Reinstall Node.js from nodejs.org
 2. Restart your computer
 3. Test: `node --version` in terminal
 
 ### ❌ Problem: "npm install" fails
+
 **Solutions to try:**
+
 ```bash
 # Try these one by one:
 npm cache clean --force
@@ -217,7 +222,9 @@ npm install --legacy-peer-deps
 ```
 
 ### ❌ Problem: "Port 5173 is already in use"
+
 **Solution:**
+
 ```bash
 # Kill the process and try again:
 npx kill-port 5173
@@ -225,13 +232,17 @@ npm run dev
 ```
 
 ### ❌ Problem: Extensions not working
+
 **Solution:**
+
 1. Press `Ctrl+Shift+P`
 2. Type "Developer: Reload Window"
 3. Press Enter
 
 ### ❌ Problem: Tailwind CSS not working
+
 **Solution:**
+
 1. Make sure "Tailwind CSS IntelliSense" extension is installed
 2. Restart VS Code
 3. Check if `tailwind.config.ts` file exists in project
@@ -241,23 +252,27 @@ npm run dev
 ## 📱 Testing Checklist for Students
 
 ### ✅ Basic Setup Test
+
 - [ ] Node.js version shows (should be 18+)
 - [ ] Git version shows
 - [ ] VS Code opens without errors
 - [ ] All 5 extensions installed
 
 ### ✅ Project Setup Test
+
 - [ ] Project folder downloaded
 - [ ] `npm install` completed successfully
 - [ ] `package.json` file exists in project
 
 ### ✅ Development Server Test
+
 - [ ] `npm run dev` starts without errors
 - [ ] Browser opens automatically
 - [ ] Homepage loads with CivicConnect design
 - [ ] No red errors in browser console (F12)
 
 ### ✅ Feature Test
+
 - [ ] Can click "Report an Issue"
 - [ ] Can navigate to different pages
 - [ ] Images and icons load properly
@@ -268,6 +283,7 @@ npm run dev
 ## 🎯 What Success Looks Like
 
 ### In Terminal:
+
 ```
 > npm run dev
 
@@ -278,6 +294,7 @@ npm run dev
 ```
 
 ### In Browser:
+
 - Beautiful CivicConnect homepage
 - Blue and green color scheme
 - "Report. Track. Resolve." heading
@@ -285,6 +302,7 @@ npm run dev
 - No error messages
 
 ### In VS Code:
+
 - No red squiggly lines in code
 - Autocomplete works when typing
 - File explorer shows project structure
@@ -295,19 +313,22 @@ npm run dev
 ## 🆘 Need Help?
 
 ### Quick Fixes:
+
 1. **Restart everything:** Close VS Code → Restart computer → Try again
 2. **Clean install:** Delete `node_modules` folder → Run `npm install` again
 3. **Check internet:** Make sure you're connected when running `npm install`
 
 ### Check Your Setup:
+
 ```bash
 # Run these to verify your setup:
-node --version        # Should show v18+ 
+node --version        # Should show v18+
 npm --version         # Should show 8+
 git --version         # Should show 2+
 ```
 
 ### Still Stuck?
+
 1. Take a screenshot of the error
 2. Note which step you're on
 3. Ask for help with specific details
@@ -317,6 +338,7 @@ git --version         # Should show 2+
 ## 🎉 You're Ready to Code!
 
 Once everything is working:
+
 - **Start coding:** Make changes to files in `client/` folder
 - **See changes instantly:** Save file → Browser updates automatically
 - **Stop server:** Press `Ctrl+C` in terminal when done
