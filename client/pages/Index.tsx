@@ -188,7 +188,7 @@ export default function Index() {
             <div>
               <div className="flex items-center mb-6">
                 <Smartphone className="w-8 h-8 text-civic-blue-500 mr-3" />
-                <h3 className="text-2xl font-bold text-civic-blue-900">
+                <h3 className="text-2xl font-bold text-civic-blue-900 dark:text-civic-blue-100">
                   For Citizens
                 </h3>
               </div>
