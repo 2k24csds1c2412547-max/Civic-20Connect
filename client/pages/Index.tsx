@@ -328,10 +328,10 @@ export default function Index() {
               <div className="w-20 h-20 bg-civic-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Camera className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-civic-blue-900 mb-4">
+              <h3 className="text-xl font-bold text-civic-blue-900 dark:text-civic-blue-100 mb-4">
                 1. Report
               </h3>
-              <p className="text-civic-blue-700">
+              <p className="text-civic-blue-700 dark:text-civic-blue-300">
                 Snap a photo of the issue, add a description, and share your
                 location. Our mobile app makes reporting quick and easy.
               </p>
