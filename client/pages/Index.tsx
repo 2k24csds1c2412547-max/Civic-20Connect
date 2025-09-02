@@ -483,7 +483,7 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-civic-blue-900 text-white py-12 px-4">
+      <footer className="bg-civic-blue-900 dark:bg-gray-950 text-white py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
