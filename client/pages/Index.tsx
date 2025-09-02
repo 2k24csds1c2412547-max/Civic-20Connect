@@ -84,7 +84,7 @@ export default function Index() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <Badge className="mb-6 bg-civic-blue-100 text-civic-blue-800 hover:bg-civic-blue-200 dark:bg-civic-blue-900 dark:text-civic-blue-100 dark:hover:bg-civic-blue-800">
-            ����️ Empowering Communities
+            🏛️ Empowering Communities
           </Badge>
           <h1 className="text-5xl md:text-7xl font-bold text-civic-blue-900 dark:text-civic-blue-100 mb-6 leading-tight">
             Report. Track.
@@ -170,14 +170,14 @@ export default function Index() {
       {/* Features Section */}
       <section
         id="features"
-        className="py-20 px-4 bg-white/70 backdrop-blur-sm"
+        className="py-20 px-4 bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm"
       >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-civic-blue-900 mb-4">
+            <h2 className="text-4xl font-bold text-civic-blue-900 dark:text-civic-blue-100 mb-4">
               Powerful Features for Everyone
             </h2>
-            <p className="text-xl text-civic-blue-700 max-w-2xl mx-auto">
+            <p className="text-xl text-civic-blue-700 dark:text-civic-blue-300 max-w-2xl mx-auto">
               Designed for citizens and municipal staff to work together
               effectively
             </p>
