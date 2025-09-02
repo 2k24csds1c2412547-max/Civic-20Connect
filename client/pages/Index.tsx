@@ -83,15 +83,15 @@ export default function Index() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl text-center">
-          <Badge className="mb-6 bg-civic-blue-100 text-civic-blue-800 hover:bg-civic-blue-200">
-            🏛️ Empowering Communities
+          <Badge className="mb-6 bg-civic-blue-100 text-civic-blue-800 hover:bg-civic-blue-200 dark:bg-civic-blue-900 dark:text-civic-blue-100 dark:hover:bg-civic-blue-800">
+            ����️ Empowering Communities
           </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold text-civic-blue-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-civic-blue-900 dark:text-civic-blue-100 mb-6 leading-tight">
             Report. Track.
             <br />
-            <span className="text-civic-green-600">Resolve.</span>
+            <span className="text-civic-green-600 dark:text-civic-green-400">Resolve.</span>
           </h1>
-          <p className="text-xl text-civic-blue-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-civic-blue-700 dark:text-civic-blue-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             Connect your community with local government through our
             comprehensive civic issue reporting platform. Report problems, track
             progress, and see real change happen in your neighborhood.
