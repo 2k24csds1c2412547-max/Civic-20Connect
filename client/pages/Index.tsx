@@ -47,22 +47,23 @@ export default function Index() {
           <nav className="hidden lg:flex items-center gap-4">
             <Link
               to="/community"
-              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium"
+              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium dark:text-civic-blue-300 dark:hover:text-civic-blue-100"
             >
               Community
             </Link>
             <Link
               to="/analytics"
-              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium"
+              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium dark:text-civic-blue-300 dark:hover:text-civic-blue-100"
             >
               Analytics
             </Link>
             <Link
               to="/rewards"
-              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium"
+              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium dark:text-civic-blue-300 dark:hover:text-civic-blue-100"
             >
               Rewards
             </Link>
+            <ThemeToggle />
             <Button variant="outline" size="sm" asChild>
               <Link to="/admin">Admin Portal</Link>
             </Button>
@@ -70,9 +71,12 @@ export default function Index() {
               <Link to="/report">Report Issue</Link>
             </Button>
           </nav>
-          <Button className="md:hidden" variant="outline" size="sm">
-            Menu
-          </Button>
+          <div className="flex lg:hidden items-center gap-2">
+            <ThemeToggle />
+            <Button className="md:hidden" variant="outline" size="sm">
+              Menu
+            </Button>
+          </div>
         </div>
       </header>
 
