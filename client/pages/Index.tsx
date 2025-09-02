@@ -315,10 +315,10 @@ export default function Index() {
       <section id="how-it-works" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-civic-blue-900 mb-4">
+            <h2 className="text-4xl font-bold text-civic-blue-900 dark:text-civic-blue-100 mb-4">
               How It Works
             </h2>
-            <p className="text-xl text-civic-blue-700 max-w-2xl mx-auto">
+            <p className="text-xl text-civic-blue-700 dark:text-civic-blue-300 max-w-2xl mx-auto">
               Simple, effective, and transparent civic engagement in three steps
             </p>
           </div>
