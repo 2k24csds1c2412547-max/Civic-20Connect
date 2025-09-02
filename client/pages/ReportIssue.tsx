@@ -31,6 +31,7 @@ import {
 import { Link } from "react-router-dom";
 import AIAnalysis from "@/components/AIAnalysis";
 import VoiceReporting from "@/components/VoiceReporting";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function ReportIssue() {
   const [step, setStep] = useState(1);
