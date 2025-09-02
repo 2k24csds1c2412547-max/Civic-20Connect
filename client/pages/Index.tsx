@@ -36,10 +36,10 @@ export default function Index() {
               <Shield className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-civic-blue-900">
+              <h1 className="text-xl font-bold text-civic-blue-900 dark:text-civic-blue-100">
                 CivicConnect
               </h1>
-              <p className="text-xs text-civic-blue-600">
+              <p className="text-xs text-civic-blue-600 dark:text-civic-blue-300">
                 Community Issue Reporting
               </p>
             </div>
