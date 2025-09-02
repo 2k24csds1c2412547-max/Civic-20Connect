@@ -34,6 +34,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import PredictiveInsights from "@/components/PredictiveInsights";
+import IssueLocationMap from "@/components/IssueLocationMap";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function AdminDashboard() {
   const [filterStatus, setFilterStatus] = useState("all");
