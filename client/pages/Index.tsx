@@ -341,10 +341,10 @@ export default function Index() {
               <div className="w-20 h-20 bg-civic-green-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Clock className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-civic-green-900 mb-4">
+              <h3 className="text-xl font-bold text-civic-green-900 dark:text-civic-green-100 mb-4">
                 2. Track
               </h3>
-              <p className="text-civic-green-700">
+              <p className="text-civic-green-700 dark:text-civic-green-300">
                 Watch as your report moves through the system. Get notifications
                 when it's assigned, in progress, and completed.
               </p>
@@ -354,10 +354,10 @@ export default function Index() {
               <div className="w-20 h-20 bg-civic-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-civic-orange-900 mb-4">
+              <h3 className="text-xl font-bold text-civic-orange-900 dark:text-civic-orange-100 mb-4">
                 3. Resolve
               </h3>
-              <p className="text-civic-orange-700">
+              <p className="text-civic-orange-700 dark:text-civic-orange-300">
                 See the issue resolved and receive before/after photos. Rate
                 your experience and help improve city services.
               </p>
