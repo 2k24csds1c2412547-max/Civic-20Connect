@@ -42,6 +42,7 @@ interface IssueHotspot {
 export default function IssueHeatMap() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedTimeframe, setSelectedTimeframe] = useState("30d");
+  const [selectedMonth, setSelectedMonth] = useState("all");
   const [selectedHotspot, setSelectedHotspot] = useState<IssueHotspot | null>(
     null,
   );
@@ -161,6 +162,11 @@ export default function IssueHeatMap() {
     if (selectedCategory !== "all" && hotspot.category !== selectedCategory) {
       return false;
     }
+    if (selectedMonth !== "all") {
+      const d = new Date(hotspot.lastReported);
+      const ym = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+      if (ym !== selectedMonth) return false;
+    }
     return true;
   });
 
@@ -208,6 +214,18 @@ export default function IssueHeatMap() {
                 <SelectItem value="30d">Last 30 days</SelectItem>
                 <SelectItem value="90d">Last 3 months</SelectItem>
                 <SelectItem value="1y">Last year</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select value={selectedMonth} onValueChange={setSelectedMonth}>
+              <SelectTrigger className="w-full lg:w-48">
+                <SelectValue placeholder="Month" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Months</SelectItem>
+                <SelectItem value="2024-01">Jan 2024</SelectItem>
+                <SelectItem value="2023-12">Dec 2023</SelectItem>
+                <SelectItem value="2023-11">Nov 2023</SelectItem>
               </SelectContent>
             </Select>
 
