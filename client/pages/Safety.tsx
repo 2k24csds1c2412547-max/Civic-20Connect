@@ -1,7 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, Phone, MapPin, Shield, Siren, Navigation, ArrowLeft, Building2 } from "lucide-react";
+import {
+  AlertTriangle,
+  Phone,
+  MapPin,
+  Shield,
+  Siren,
+  Navigation,
+  ArrowLeft,
+  Building2,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const helplines = [
@@ -13,15 +28,40 @@ const helplines = [
 ];
 
 const policeStations = [
-  { name: "Central Police Station", address: "Main St & 3rd Ave", lat: 28.6139, lng: 77.209 },
-  { name: "North Zone Police", address: "Oak Ave, Sector 12", lat: 28.7041, lng: 77.1025 },
-  { name: "City Women Cell", address: "Civic Center Road", lat: 28.5355, lng: 77.391 },
+  {
+    name: "Central Police Station",
+    address: "Main St & 3rd Ave",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    name: "North Zone Police",
+    address: "Oak Ave, Sector 12",
+    lat: 28.7041,
+    lng: 77.1025,
+  },
+  {
+    name: "City Women Cell",
+    address: "Civic Center Road",
+    lat: 28.5355,
+    lng: 77.391,
+  },
 ];
 
 const municipalOffices = [
   { name: "Municipal HQ", address: "Civic Center", lat: 28.6207, lng: 77.2273 },
-  { name: "Ward Office - West", address: "West End Blvd", lat: 28.6692, lng: 77.4538 },
-  { name: "Ward Office - South", address: "Green Park", lat: 28.5494, lng: 77.2001 },
+  {
+    name: "Ward Office - West",
+    address: "West End Blvd",
+    lat: 28.6692,
+    lng: 77.4538,
+  },
+  {
+    name: "Ward Office - South",
+    address: "Green Park",
+    lat: 28.5494,
+    lng: 77.2001,
+  },
 ];
 
 export default function Safety() {
@@ -49,8 +89,12 @@ export default function Safety() {
             </Link>
           </Button>
           <div>
-            <h1 className="text-lg font-semibold text-civic-blue-900">Safety & SOS</h1>
-            <p className="text-sm text-civic-blue-600">Emergency services and nearby authorities</p>
+            <h1 className="text-lg font-semibold text-civic-blue-900">
+              Safety & SOS
+            </h1>
+            <p className="text-sm text-civic-blue-600">
+              Emergency services and nearby authorities
+            </p>
           </div>
           <Button asChild>
             <Link to="/report">Report Issue</Link>
@@ -72,17 +116,27 @@ export default function Safety() {
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-3">
-              <Button asChild className="bg-white text-rose-600 hover:bg-gray-100">
+              <Button
+                asChild
+                className="bg-white text-rose-600 hover:bg-gray-100"
+              >
                 <a href="tel:181">
                   <Phone className="w-4 h-4 mr-2" /> Call 181
                 </a>
               </Button>
-              <Button asChild className="bg-white text-rose-600 hover:bg-gray-100">
+              <Button
+                asChild
+                className="bg-white text-rose-600 hover:bg-gray-100"
+              >
                 <a href="tel:112">
                   <Phone className="w-4 h-4 mr-2" /> Call 112
                 </a>
               </Button>
-              <Button onClick={shareLiveLocation} variant="outline" className="border-white text-white">
+              <Button
+                onClick={shareLiveLocation}
+                variant="outline"
+                className="border-white text-white"
+              >
                 <Navigation className="w-4 h-4 mr-2" /> Share Live Location
               </Button>
             </div>
@@ -101,7 +155,11 @@ export default function Safety() {
           <CardContent>
             <div className="grid md:grid-cols-3 gap-3">
               {helplines.map((h) => (
-                <a key={h.number} href={`tel:${h.number}`} className="p-4 rounded-lg border hover:bg-gray-50 flex items-center justify-between">
+                <a
+                  key={h.number}
+                  href={`tel:${h.number}`}
+                  className="p-4 rounded-lg border hover:bg-gray-50 flex items-center justify-between"
+                >
                   <div>
                     <div className="font-semibold">{h.name}</div>
                     <div className="text-sm text-gray-600">{h.number}</div>

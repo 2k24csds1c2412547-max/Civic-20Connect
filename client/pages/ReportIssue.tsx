@@ -98,10 +98,15 @@ export default function ReportIssue() {
       status: "pending" as const,
       priority: (formData.urgency || "medium") as any,
       location: formData.location,
-      submittedDate: now.toISOString().slice(0,10),
+      submittedDate: now.toISOString().slice(0, 10),
       description: formData.description,
       updates: [
-        { date: now.toISOString().slice(0,10), status: "Received", message: "Thank you for your report. We have received your submission." },
+        {
+          date: now.toISOString().slice(0, 10),
+          status: "Received",
+          message:
+            "Thank you for your report. We have received your submission.",
+        },
       ],
     };
     addReport(report);

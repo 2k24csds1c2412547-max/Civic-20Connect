@@ -99,7 +99,15 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4" style={{backgroundImage: "url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1600&auto=format&fit=crop')", backgroundSize:'cover', backgroundPosition:'center'}}>
+      <section
+        className="py-20 px-4"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1600&auto=format&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container mx-auto max-w-6xl text-center">
           <Badge className="mb-6 bg-civic-blue-100 text-civic-blue-800 hover:bg-civic-blue-200 dark:bg-civic-blue-900 dark:text-civic-blue-100 dark:hover:bg-civic-blue-800">
             🏛️ Empowering Communities
@@ -107,7 +115,9 @@ export default function Index() {
           <h1 className="text-5xl md:text-7xl font-bold text-civic-blue-900 dark:text-civic-blue-100 mb-6 leading-tight">
             Report. Track.
             <br />
-            <span className="text-civic-green-600 dark:text-civic-green-400">Resolve.</span>
+            <span className="text-civic-green-600 dark:text-civic-green-400">
+              Resolve.
+            </span>
           </h1>
           <p className="text-xl text-civic-blue-700 dark:text-civic-blue-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             Connect your community with local government through our

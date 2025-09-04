@@ -164,7 +164,7 @@ export default function IssueHeatMap() {
     }
     if (selectedMonth !== "all") {
       const d = new Date(hotspot.lastReported);
-      const ym = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+      const ym = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
       if (ym !== selectedMonth) return false;
     }
     return true;

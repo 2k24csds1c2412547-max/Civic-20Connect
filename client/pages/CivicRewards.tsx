@@ -5,7 +5,7 @@ import GamificationHub from "@/components/GamificationHub";
 import { getPoints } from "@/lib/storage";
 
 export default function CivicRewards() {
-  const points = typeof window !== 'undefined' ? getPoints() : 0;
+  const points = typeof window !== "undefined" ? getPoints() : 0;
   return (
     <div className="min-h-screen bg-gradient-to-br from-civic-blue-50 via-white to-civic-green-50">
       {/* Header */}
@@ -27,7 +27,9 @@ export default function CivicRewards() {
           </div>
           <div className="text-right hidden md:block">
             <div className="text-xs text-gray-500">Your Points</div>
-            <div className="text-xl font-bold text-civic-green-600">{points}</div>
+            <div className="text-xl font-bold text-civic-green-600">
+              {points}
+            </div>
           </div>
           <Button asChild>
             <Link to="/report">Report Issue</Link>
