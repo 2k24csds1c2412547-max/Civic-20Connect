@@ -63,6 +63,24 @@ export default function Index() {
             >
               Rewards
             </Link>
+            <Link
+              to="/safety"
+              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium dark:text-civic-blue-300 dark:hover:text-civic-blue-100"
+            >
+              Safety
+            </Link>
+            <Link
+              to="/track"
+              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium dark:text-civic-blue-300 dark:hover:text-civic-blue-100"
+            >
+              Track
+            </Link>
+            <Link
+              to="/reviews"
+              className="text-civic-blue-700 hover:text-civic-blue-900 font-medium dark:text-civic-blue-300 dark:hover:text-civic-blue-100"
+            >
+              Reviews
+            </Link>
             <ThemeToggle />
             <Button variant="outline" size="sm" asChild>
               <Link to="/admin">Admin Portal</Link>
