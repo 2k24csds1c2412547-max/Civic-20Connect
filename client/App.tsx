@@ -15,6 +15,9 @@ import CivicRewards from "./pages/CivicRewards";
 import Community from "./pages/Community";
 import Analytics from "./pages/Analytics";
 import NotFound from "./pages/NotFound";
+import Safety from "./pages/Safety";
+import Reviews from "./pages/Reviews";
+import OfflineNotice from "@/components/OfflineNotice";
 
 const queryClient = new QueryClient();
 
