@@ -99,7 +99,7 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" style={{backgroundImage: "url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1600&auto=format&fit=crop')", backgroundSize:'cover', backgroundPosition:'center'}}>
         <div className="container mx-auto max-w-6xl text-center">
           <Badge className="mb-6 bg-civic-blue-100 text-civic-blue-800 hover:bg-civic-blue-200 dark:bg-civic-blue-900 dark:text-civic-blue-100 dark:hover:bg-civic-blue-800">
             🏛️ Empowering Communities
