@@ -167,7 +167,9 @@ export default function TrackReports() {
     }
   };
 
-  const filteredReports = reports.filter(
+  const allReports = [...storedReports, ...reports];
+
+  const filteredReports = allReports.filter(
     (report) =>
       report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       report.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
