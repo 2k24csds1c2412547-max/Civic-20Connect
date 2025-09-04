@@ -520,19 +520,19 @@ export default function Index() {
               <h4 className="font-semibold mb-4">Platform</h4>
               <ul className="space-y-2 text-sm text-blue-200">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link to="/report" className="hover:text-white">
                     Report Issue
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link to="/track" className="hover:text-white">
                     Track Reports
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Mobile App
-                  </a>
+                  <Link to="/safety" className="hover:text-white">
+                    Safety & SOS
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -540,19 +540,19 @@ export default function Index() {
               <h4 className="font-semibold mb-4">For Government</h4>
               <ul className="space-y-2 text-sm text-blue-200">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link to="/admin" className="hover:text-white">
                     Admin Dashboard
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    API Access
-                  </a>
+                  <Link to="/analytics" className="hover:text-white">
+                    Analytics
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Integration
-                  </a>
+                  <Link to="/rewards" className="hover:text-white">
+                    Rewards
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -560,19 +560,19 @@ export default function Index() {
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-blue-200">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link to="/safety" className="hover:text-white">
                     Help Center
+                  </Link>
+                </li>
+                <li>
+                  <a href="tel:112" className="hover:text-white">
+                    Emergency: 112
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Privacy Policy
-                  </a>
+                  <Link to="/reviews" className="hover:text-white">
+                    Reviews
+                  </Link>
                 </li>
               </ul>
             </div>
