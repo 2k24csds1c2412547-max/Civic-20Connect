@@ -10,6 +10,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import IssueProgressTracker from "@/components/IssueProgressTracker";
+import {
   ArrowLeft,
   Search,
   MapPin,
@@ -23,6 +30,8 @@ import { Link } from "react-router-dom";
 
 export default function TrackReports() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   // Mock data for demonstration
   const reports = [
@@ -253,6 +262,17 @@ export default function TrackReports() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">{report.description}</p>
+                <div className="mb-4">
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedReportId(report.id);
+                      setShowDetails(true);
+                    }}
+                  >
+                    View details
+                  </Button>
+                </div>
 
                 {/* Timeline */}
                 <div className="border-t pt-4">
@@ -306,6 +326,23 @@ export default function TrackReports() {
           </Card>
         )}
       </div>
+
+      <Dialog open={showDetails} onOpenChange={setShowDetails}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>Issue Progress</DialogTitle>
+          </DialogHeader>
+          {selectedReportId && (
+            <IssueProgressTracker
+              issueId={selectedReportId}
+              onRatingSubmit={(rating, feedback) => {
+                // Handle rating submit (e.g., send to API)
+                console.log("Rating submitted", { rating, feedback, issueId: selectedReportId });
+              }}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
