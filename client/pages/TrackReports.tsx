@@ -33,7 +33,15 @@ export default function TrackReports() {
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState(false);
 
-  // Mock data for demonstration
+  const storedReports: any[] = (() => {
+    try {
+      return JSON.parse(localStorage.getItem("civic_reports") || "[]");
+    } catch {
+      return [];
+    }
+  })();
+
+  // Base data for demonstration (augmented by your submissions)
   const reports = [
     {
       id: "CR-2024-0156",
