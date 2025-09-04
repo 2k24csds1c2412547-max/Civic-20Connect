@@ -28,6 +28,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <OfflineNotice />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/report" element={<ReportIssue />} />
@@ -36,6 +37,8 @@ const App = () => (
             <Route path="/rewards" element={<CivicRewards />} />
             <Route path="/community" element={<Community />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/safety" element={<Safety />} />
+            <Route path="/reviews" element={<Reviews />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
