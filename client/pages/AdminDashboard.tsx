@@ -225,9 +225,10 @@ export default function AdminDashboard() {
 
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5 lg:w-auto lg:grid-cols-5">
+          <TabsList className="grid w-full grid-cols-6 lg:w-auto lg:grid-cols-6">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="reports">Reports</TabsTrigger>
+            <TabsTrigger value="map">Map</TabsTrigger>
             <TabsTrigger value="departments">Departments</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
             <TabsTrigger value="predictions">AI Insights</TabsTrigger>
@@ -560,6 +561,19 @@ export default function AdminDashboard() {
                     </Card>
                   ))}
                 </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* Map Tab */}
+          <TabsContent value="map" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-civic-blue-900">Issue Map</CardTitle>
+                <CardDescription>Track exact locations of reported issues</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <IssueLocationMap />
               </CardContent>
             </Card>
           </TabsContent>
