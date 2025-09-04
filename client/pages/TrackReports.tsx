@@ -337,7 +337,11 @@ export default function TrackReports() {
               issueId={selectedReportId}
               onRatingSubmit={(rating, feedback) => {
                 // Handle rating submit (e.g., send to API)
-                console.log("Rating submitted", { rating, feedback, issueId: selectedReportId });
+                console.log("Rating submitted", {
+                  rating,
+                  feedback,
+                  issueId: selectedReportId,
+                });
               }}
             />
           )}

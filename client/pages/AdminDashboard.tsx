@@ -570,7 +570,9 @@ export default function AdminDashboard() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-civic-blue-900">Issue Map</CardTitle>
-                <CardDescription>Track exact locations of reported issues</CardDescription>
+                <CardDescription>
+                  Track exact locations of reported issues
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <IssueLocationMap />
