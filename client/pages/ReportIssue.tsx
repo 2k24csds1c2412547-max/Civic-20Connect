@@ -32,9 +32,11 @@ import { Link } from "react-router-dom";
 import AIAnalysis from "@/components/AIAnalysis";
 import VoiceReporting from "@/components/VoiceReporting";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { addPoints, addReport, generateReportId } from "@/lib/storage";
 
 export default function ReportIssue() {
   const [step, setStep] = useState(1);
+  const [newId, setNewId] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     category: "",
     title: "",
@@ -87,9 +89,25 @@ export default function ReportIssue() {
   };
 
   const handleSubmit = () => {
-    // Here you would submit the form data to your API
-    console.log("Submitting report:", formData);
-    setStep(4); // Show success screen
+    const id = generateReportId();
+    const now = new Date();
+    const report = {
+      id,
+      title: formData.title,
+      category: formData.category,
+      status: "pending" as const,
+      priority: (formData.urgency || "medium") as any,
+      location: formData.location,
+      submittedDate: now.toISOString().slice(0,10),
+      description: formData.description,
+      updates: [
+        { date: now.toISOString().slice(0,10), status: "Received", message: "Thank you for your report. We have received your submission." },
+      ],
+    };
+    addReport(report);
+    addPoints(50);
+    setNewId(id);
+    setStep(4);
   };
 
   const getLocation = () => {
@@ -122,7 +140,7 @@ export default function ReportIssue() {
               Report Submitted!
             </CardTitle>
             <CardDescription>
-              Your report has been received and assigned ID #CR-2024-0156
+              Your report has been received and assigned ID #{newId}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
